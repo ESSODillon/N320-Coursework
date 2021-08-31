@@ -1,17 +1,18 @@
 class Raindrop {
-  constructor(radius) {
+  constructor(x, y, radius, color) {
     // Sets up the blueprints for making raindrops
-    this.x = Math.random(0, 600);
-    this.y = Math.random(0, 500);
-    this.radius = Math.random(0, 5);
-    this.speed = 1 + Math.random() * 2;
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+    this.speed = 1 + Math.random() * 3;
+    this.color = color;
   }
 
   fall() {
-    // Colors the rain drops
-    fill(173, 241, 255);
-    // Draws the circle in p5.js
+    // Creates a circle
     circle(this.x, this.y, this.radius);
+    // Colors the raindrop
+    fill(this.color);
     // Sets the speed for falling along the y axis
     this.y = this.y + this.speed;
     // Sets the acceleration of speed
