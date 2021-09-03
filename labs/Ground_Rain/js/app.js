@@ -3,14 +3,17 @@ function setup() {
 }
 
 let raindrops = [];
-let colors = ["#c0dbfc", "#408ec9", "#1e3b63", "#5c76b8", "#a1a6cf"];
-console.log(raindrops);
+let ground = [];
+let colors = ["#c0dbfc", "#408ec9", "#5c76b8", "#a1a6cf"];
+let count = 0;
 
-for (let i = 0; i <= 30; i++) {
+ground[0] = new Ground(0, 450, 600, 50, [138, 138, 138]);
+
+for (let i = 0; i <= 5; i++) {
   let color_select = colors[Math.floor(Math.random() * colors.length)];
   let pos_y = Math.floor(Math.random() * 400) + 5;
   let pos_x = Math.floor(Math.random() * 575) + 25;
-  let radius = Math.floor(Math.random() * 25) + 15;
+  let radius = Math.floor(Math.random() * 12) + 7;
 
   let new_drop = new Raindrop(pos_x, pos_y, radius, color_select);
 
@@ -18,9 +21,13 @@ for (let i = 0; i <= 30; i++) {
 }
 
 function draw() {
+  noStroke();
   background(34, 32, 79);
 
-  for (let i = 0; i <= 30; i++) {
-    raindrops[i].fall();
-  }
+  ground[0].create();
+
+  raindrops.forEach((Raindrop) => {
+    Raindrop.preset();
+    Raindrop.fall();
+  });
 }
