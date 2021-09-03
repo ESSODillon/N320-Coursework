@@ -24,8 +24,12 @@ class Raindrop {
     if (this.y >= 450) {
       this.y = 0;
 
-      counter = counter++;
-      console.log("Hit detected");
+      counter = counter + 1;
+      console.log(counter);
+
+      if (counter % 10 == 1) {
+        console.log("10 reached successfully");
+      }
     }
 
     // If speed is less than 15, accelerate. If it's greater than 15, slowdown.
