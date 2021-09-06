@@ -1,7 +1,7 @@
 class Instrument {
   constructor(family, verb, loudness) {
     this.family = family;
-    this.verb = play;
+    this.verb = verb;
     this.loudness = loudness;
   }
 
@@ -34,3 +34,9 @@ class Stringed extends Instrument {
 let trumpet = new Woodwind("Trumpet", "toots", "ferociously");
 let bongos = new Percussion("Bongos", "slaps", "uproariously");
 let banjo = new Stringed("Banjo", "strums", "softly");
+
+band = [trumpet.play(), bongos.play(), banjo.play()];
+
+for (let i = 0; i < band.length; i++) {
+  band[i];
+}
