@@ -34,16 +34,23 @@ class Raindrop {
     this.y = this.y + this.speed;
 
     if (this.y >= 450) {
-      console.log(count);
+      //console.log(count);
       count = count += 1;
     }
 
     if (count % 10 == 1) {
-      console.log("10 reached successfully");
+      //console.log("It worked");
       ground_color.b += 7;
       if (ground_color.b >= 200) {
         ground_color.r += 10;
         ground_color.g += 10;
+      }
+
+      if (ground_color.r >= 200 && ground_color.g >= 200) {
+        //console.log(ground_color);
+        ground_color.r = 138;
+        ground_color.g = 138;
+        ground_color.b = 138;
       }
     }
 
@@ -63,26 +70,21 @@ class Raindrop {
 }
 
 class Ground {
-  constructor(x, y, width, height, color) {
+  constructor(x, y, width, height) {
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
-    this.color = color;
   }
 
-  create() {
-    fill(this.color);
+  create(r, g, b) {
+    fill(r, g, b);
     rect(this.x, this.y, this.width, this.height);
   }
 }
 
 // Class instance for ground
-ground[0] = new Ground(0, 450, 600, 50, [
-  ground_color.r,
-  ground_color.g,
-  ground_color.b,
-]);
+ground[0] = new Ground(0, 450, 600, 50);
 
 // Raindrop instances plugging into an array. If you want too add more raindrops, change the for loop.
 for (let i = 0; i <= 5; i++) {
@@ -103,7 +105,7 @@ function draw() {
   noStroke();
   background(34, 32, 79);
 
-  ground[0].create();
+  ground[0].create(ground_color.r, ground_color.g, ground_color.b);
 
   raindrops.forEach((Raindrop) => {
     Raindrop.preset();
