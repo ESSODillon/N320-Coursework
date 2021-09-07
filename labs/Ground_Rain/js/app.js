@@ -40,14 +40,16 @@ class Raindrop {
 
     if (count % 10 == 1) {
       //console.log("It worked");
-      ground_color.b += 7;
+      console.log(ground_color);
+
+      ground_color.b += 0.5;
       if (ground_color.b >= 200) {
-        ground_color.r += 10;
-        ground_color.g += 10;
+        ground_color.r += 0.1;
+        ground_color.g += 0.1;
       }
 
       if (ground_color.r >= 200 && ground_color.g >= 200) {
-        //console.log(ground_color);
+        console.log(ground_color);
         ground_color.r = 138;
         ground_color.g = 138;
         ground_color.b = 138;
