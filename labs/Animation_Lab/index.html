@@ -10,22 +10,22 @@
 <body>
         
     <div id="wrapper">
+        <h1 id="alert">Haha... All the elements disappeared</h1>
+        <button  id="alert_button" onclick="refreshPage()">Bring us back!</button>
         <h1 id="title">Title</h1>
         <div id="blue_rectangle"></div>
         <div id="table">
             <div id="row">
-                <div onclick="squareEscape()" onmouseover="highlight()" class="row_square"></div>
-                <div onclick="squareEscape()" onmouseover="highlight()" class="row_square"></div>
-                <div onclick="squareEscape()" onmouseover="highlight()" class="row_square"></div>
+                <div onclick="squareEscape()" onmouseover="highlight()" onmouseout="recolor()" class="row_square"></div>
+                <div onclick="squareEscape()" onmouseover="highlight()" onmouseout="recolor()" class="row_square"></div>
+                <div onclick="squareEscape()" onmouseover="highlight()" onmouseout="recolor()" class="row_square"></div>
             </div>
             <div id="row">
-                <div onclick="squareEscape()" onmouseover="highlight()" class="row_square"></div>
-                <div onclick="squareEscape()" onmouseover="highlight()" class="row_square"></div>
-                <div onclick="squareEscape()" onmouseover="highlight()" class="row_square"></div>
+                <div onclick="squareEscape()" onmouseover="highlight()" onmouseout="recolor()" class="row_square"></div>
+                <div onclick="squareEscape()" onmouseover="highlight()" onmouseout="recolor()" class="row_square"></div>
+                <div onclick="squareEscape()" onmouseover="highlight()" onmouseout="recolor()" class="row_square"></div>
             </div>
         </div>
-        <h1 id="alert">Haha... All the elements disappeared</h1>
-        <button  id="alert_button" onclick="refreshPage()">Bring us back!</button>
     </div>
   
 

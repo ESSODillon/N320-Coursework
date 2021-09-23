@@ -15,24 +15,20 @@ TweenMax.from(contentWrapper, {
 
 // A mouse over / highlight for each of the gallery elements below
 function highlight() {
-  for (let i = 0; i < row_squares.length; i++) {
-    TweenLite.from(row_squares[i], {
-      duration: i * 0.6,
-      backgroundColor: "purple",
-    });
-    TweenLite.to(row_squares[i], {
-      duration: i * 0.6,
-      backgroundColor: "mediumpurple",
-    });
-  }
+  TweenMax.to(event.target, { duration: 0.2, backgroundColor: "mediumpurple" });
+}
+
+// Recolors the square after your mouse exits its area
+function recolor() {
+  TweenMax.to(event.target, { duration: 0.2, backgroundColor: "purple" });
 }
 
 // A exit animation for when one gallery element is clicked
 function squareEscape() {
-  TweenLite.to(title, { duration: 1.5, x: window.innerWidth, display: "none" });
+  TweenLite.to(title, { duration: 0.7, x: window.innerWidth, display: "none" });
 
   TweenLite.to(rectangle, {
-    duration: 1.5,
+    duration: 0.7,
     x: window.innerWidth,
     display: "none",
   });
@@ -44,7 +40,7 @@ function squareEscape() {
   });
 
   TweenLite.to(alert, {
-    display: "block",
+    display: "inline-block",
   });
 
   TweenLite.from(alert_button, {
@@ -59,13 +55,14 @@ function squareEscape() {
 
   for (let i = 0; i < row_squares.length; i++) {
     TweenLite.to(row_squares[i], {
-      duration: 1.5,
+      duration: 0.7,
       x: window.innerWidth,
       display: "none",
     });
   }
 }
 
+// Refresh page so you can play again!
 function refreshPage() {
   window.location.reload();
 }
